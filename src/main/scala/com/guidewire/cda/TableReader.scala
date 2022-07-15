@@ -51,6 +51,8 @@ class TableReader(clientConfig: ClientConfig) {
   // https://spark.apache.org/docs/latest/configuration.html
   private[cda] val conf: SparkConf = new SparkConf()
   conf.setAppName("Cloud Data Access Client")
+  conf.set("spark.sql.session.timeZone", "UTC")
+
   private val sparkMaster = clientConfig.performanceTuning.sparkMaster match {
     case "yarn"      => clientConfig.performanceTuning.sparkMaster
     case "local" | _ =>
