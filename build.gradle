@@ -16,6 +16,17 @@ repositories {
 }
 
 dependencies {
+  constraints {
+    implementation "org.apache.parquet:parquet-common:$parquetVersion"
+    implementation "org.apache.parquet:parquet-column:$parquetVersion"
+    implementation "org.apache.parquet:parquet-encoding:$parquetVersion"
+    implementation "org.apache.parquet:parquet-hadoop:$parquetVersion"
+    implementation "org.apache.parquet:parquet-jackson:$parquetVersion"
+    implementation "org.apache.parquet:parquet-avro:$parquetVersion"
+    implementation "org.apache.parquet:parquet-format:2.11.0"
+    implementation "org.apache.avro:avro:$avroVersion"
+  }
+
   implementation "org.scala-lang:scala-library:$scalaVersion.$scalaBuild"
   testImplementation "org.scalatest:scalatest_$scalaVersion:$scalaTestVersion"
   testImplementation "junit:junit:$jUnitVersion"
